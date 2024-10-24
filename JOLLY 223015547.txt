@@ -1,0 +1,189 @@
+
+mysql>  CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA(ID INT(16),FNAME CHAR(13), LNAME CHAR(12),GENDER CHAR(4), PROV CHAR(14), DISTRIC CHAR(12), SECTOR CHAR(13), CELL CHAR(13), EMAIL VARCHAR(14), TEL INT(17);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> CREATE TABLE NGOMA(ID INT(16),FNAME CHAR(13), LNAME CHAR(12),GENDER CHAR(4), PROV CHAR(14), DISTRIC CHAR(12), SECTOR CHAR(13), CELL CHAR(13), EMAIL VARCHAR(14), TEL INT(17));
+Query OK, 0 rows affected, 2 warnings (0.01 sec)
+
+mysql> INSERT INTO NGOMA VALUES('001','KEZA','PAULA','F','SOUTH','NYANZA','KABEZA','RWAMABUYE','KINYANA','KEZA@GMAIL.COM','07855253456');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO NGOMA VALUES('001','KEZA','PAULA','F','SOUTH','NYANZA','KABEZA','RWAMABUYE','KEZA@GMAIL.COM','07855253456');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++------+-------+-------+--------+-------+---------+--------+-----------+----------------+------------+
+| ID   | FNAME | LNAME | GENDER | PROV  | DISTRIC | SECTOR | CELL      | EMAIL          | TEL        |
++------+-------+-------+--------+-------+---------+--------+-----------+----------------+------------+
+|    1 | KEZA  | PAULA | F      | SOUTH | NYANZA  | KABEZA | RWAMABUYE | KEZA@GMAIL.COM | 2147483647 |
++------+-------+-------+--------+-------+---------+--------+-----------+----------------+------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('002''MUGABO','PIEL','M','SOUTH','HUYE','BUTARE','NGOMA','MUGA@GMAIL.COM','78645342');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO NGOMA VALUES('002','MUGABO','PIEL','M','SOUTH','HUYE','BUTARE','NGOMA','MUGA@GMAIL.COM','78645342');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('003','MWIZA','KELLEN','F','SOUTH','KAMONYI','BUGARAMA','NKOTO','MWIZA@GMAIL.COM','78648742');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+--------+--------+--------+-------+---------+----------+-----------+----------------+------------+
+| ID   | FNAME  | LNAME  | GENDER | PROV  | DISTRIC | SECTOR   | CELL      | EMAIL          | TEL        |
++------+--------+--------+--------+-------+---------+----------+-----------+----------------+------------+
+|    1 | KEZA   | PAULA  | F      | SOUTH | NYANZA  | KABEZA   | RWAMABUYE | KEZA@GMAIL.COM | 2147483647 |
+|    2 | MUGABO | PIEL   | M      | SOUTH | HUYE    | BUTARE   | NGOMA     | MUGA@GMAIL.COM |   78645342 |
+|    3 | MWIZA  | KELLEN | F      | SOUTH | KAMONYI | BUGARAMA | NKOTO     | MWIZA@GMAIL.CO |   78648742 |
++------+--------+--------+--------+-------+---------+----------+-----------+----------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('004','GISA','JON','M','WEST','NYABIHU','BUSOGA','MWIRU','GISA@GMAIL.COM','78108502');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('005','GWIZA','JONAT','M','WEST','NYABIHU','BUSOGA','MWIRU','GWIZA@GMAIL.COM','78108500');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('006','TUZA','JOELA','F','EAST','KIBUNGO','GAKUTO','AGASIMA','TUZA@GMAIL.COM','781357860');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('007','JUNO','KIZIGENZA','M','NORTH','RURINDO','NYIRANGARAMA','GATEBE','JUA@GMAIL.COM','7813576000');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('008','CYUSA','EMMY','M','EAST','KAYONZA','RUKARA','KABUGA','EMMA@GMAIL.COM','7813576456');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('009','ANNA','OLGA','F','KIGAL','REMERA','KIMIRONKO','COSMOS','ANNA@GMAIL.COM','781352345');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('010','MUTO','SHAN','F','KIGAL','NYARUGENGE','NYAMIRAMBO','COSMOS','SHAN@GMAIL.COM','7813524005');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT*FROM NGOMA;
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+
+| ID   | FNAME  | LNAME     | GENDER | PROV  | DISTRIC    | SECTOR       | CELL      | EMAIL          | TEL        |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+
+|    1 | KEZA   | PAULA     | F      | SOUTH | NYANZA     | KABEZA       | RWAMABUYE | KEZA@GMAIL.COM | 2147483647 |
+|    2 | MUGABO | PIEL      | M      | SOUTH | HUYE       | BUTARE       | NGOMA     | MUGA@GMAIL.COM |   78645342 |
+|    3 | MWIZA  | KELLEN    | F      | SOUTH | KAMONYI    | BUGARAMA     | NKOTO     | MWIZA@GMAIL.CO |   78648742 |
+|    4 | GISA   | JON       | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GISA@GMAIL.COM |   78108502 |
+|    5 | GWIZA  | JONAT     | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GWIZA@GMAIL.CO |   78108500 |
+|    6 | TUZA   | JOELA     | F      | EAST  | KIBUNGO    | GAKUTO       | AGASIMA   | TUZA@GMAIL.COM |  781357860 |
+|    7 | JUNO   | KIZIGENZA | M      | NORTH | RURINDO    | NYIRANGARAMA | GATEBE    | JUA@GMAIL.COM  | 2147483647 |
+|    8 | CYUSA  | EMMY      | M      | EAST  | KAYONZA    | RUKARA       | KABUGA    | EMMA@GMAIL.COM | 2147483647 |
+|    9 | ANNA   | OLGA      | F      | KIGAL | REMERA     | KIMIRONKO    | COSMOS    | ANNA@GMAIL.COM |  781352345 |
+|   10 | MUTO   | SHAN      | F      | KIGAL | NYARUGENGE | NYAMIRAMBO   | COSMOS    | SHAN@GMAIL.COM | 2147483647 |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD SCHOOLNAME CHAR(14);
+Query OK, 10 rows affected (0.03 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+------------+
+| ID   | FNAME  | LNAME     | GENDER | PROV  | DISTRIC    | SECTOR       | CELL      | EMAIL          | TEL        | SCHOOLNAME |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+------------+
+|    1 | KEZA   | PAULA     | F      | SOUTH | NYANZA     | KABEZA       | RWAMABUYE | KEZA@GMAIL.COM | 2147483647 | NULL       |
+|    2 | MUGABO | PIEL      | M      | SOUTH | HUYE       | BUTARE       | NGOMA     | MUGA@GMAIL.COM |   78645342 | NULL       |
+|    3 | MWIZA  | KELLEN    | F      | SOUTH | KAMONYI    | BUGARAMA     | NKOTO     | MWIZA@GMAIL.CO |   78648742 | NULL       |
+|    4 | GISA   | JON       | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GISA@GMAIL.COM |   78108502 | NULL       |
+|    5 | GWIZA  | JONAT     | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GWIZA@GMAIL.CO |   78108500 | NULL       |
+|    6 | TUZA   | JOELA     | F      | EAST  | KIBUNGO    | GAKUTO       | AGASIMA   | TUZA@GMAIL.COM |  781357860 | NULL       |
+|    7 | JUNO   | KIZIGENZA | M      | NORTH | RURINDO    | NYIRANGARAMA | GATEBE    | JUA@GMAIL.COM  | 2147483647 | NULL       |
+|    8 | CYUSA  | EMMY      | M      | EAST  | KAYONZA    | RUKARA       | KABUGA    | EMMA@GMAIL.COM | 2147483647 | NULL       |
+|    9 | ANNA   | OLGA      | F      | KIGAL | REMERA     | KIMIRONKO    | COSMOS    | ANNA@GMAIL.COM |  781352345 | NULL       |
+|   10 | MUTO   | SHAN      | F      | KIGAL | NYARUGENGE | NYAMIRAMBO   | COSMOS    | SHAN@GMAIL.COM | 2147483647 | NULL       |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET SCHOOLNAME='UR HUYE'WHERE ID='1';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+------------+
+| ID   | FNAME  | LNAME     | GENDER | PROV  | DISTRIC    | SECTOR       | CELL      | EMAIL          | TEL        | SCHOOLNAME |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+------------+
+|    1 | KEZA   | PAULA     | F      | SOUTH | NYANZA     | KABEZA       | RWAMABUYE | KEZA@GMAIL.COM | 2147483647 | UR HUYE    |
+|    2 | MUGABO | PIEL      | M      | SOUTH | HUYE       | BUTARE       | NGOMA     | MUGA@GMAIL.COM |   78645342 | NULL       |
+|    3 | MWIZA  | KELLEN    | F      | SOUTH | KAMONYI    | BUGARAMA     | NKOTO     | MWIZA@GMAIL.CO |   78648742 | NULL       |
+|    4 | GISA   | JON       | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GISA@GMAIL.COM |   78108502 | NULL       |
+|    5 | GWIZA  | JONAT     | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GWIZA@GMAIL.CO |   78108500 | NULL       |
+|    6 | TUZA   | JOELA     | F      | EAST  | KIBUNGO    | GAKUTO       | AGASIMA   | TUZA@GMAIL.COM |  781357860 | NULL       |
+|    7 | JUNO   | KIZIGENZA | M      | NORTH | RURINDO    | NYIRANGARAMA | GATEBE    | JUA@GMAIL.COM  | 2147483647 | NULL       |
+|    8 | CYUSA  | EMMY      | M      | EAST  | KAYONZA    | RUKARA       | KABUGA    | EMMA@GMAIL.COM | 2147483647 | NULL       |
+|    9 | ANNA   | OLGA      | F      | KIGAL | REMERA     | KIMIRONKO    | COSMOS    | ANNA@GMAIL.COM |  781352345 | NULL       |
+|   10 | MUTO   | SHAN      | F      | KIGAL | NYARUGENGE | NYAMIRAMBO   | COSMOS    | SHAN@GMAIL.COM | 2147483647 | NULL       |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP FNAME WHERE ID='4';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ID='4'' at line 1
+mysql> ALTER TABLE NGOMA DROP TEL;
+Query OK, 10 rows affected (0.03 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+
+| ID   | FNAME  | LNAME     | GENDER | PROV  | DISTRIC    | SECTOR       | CELL      | EMAIL          | SCHOOLNAME |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+
+|    1 | KEZA   | PAULA     | F      | SOUTH | NYANZA     | KABEZA       | RWAMABUYE | KEZA@GMAIL.COM | UR HUYE    |
+|    2 | MUGABO | PIEL      | M      | SOUTH | HUYE       | BUTARE       | NGOMA     | MUGA@GMAIL.COM | NULL       |
+|    3 | MWIZA  | KELLEN    | F      | SOUTH | KAMONYI    | BUGARAMA     | NKOTO     | MWIZA@GMAIL.CO | NULL       |
+|    4 | GISA   | JON       | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GISA@GMAIL.COM | NULL       |
+|    5 | GWIZA  | JONAT     | M      | WEST  | NYABIHU    | BUSOGA       | MWIRU     | GWIZA@GMAIL.CO | NULL       |
+|    6 | TUZA   | JOELA     | F      | EAST  | KIBUNGO    | GAKUTO       | AGASIMA   | TUZA@GMAIL.COM | NULL       |
+|    7 | JUNO   | KIZIGENZA | M      | NORTH | RURINDO    | NYIRANGARAMA | GATEBE    | JUA@GMAIL.COM  | NULL       |
+|    8 | CYUSA  | EMMY      | M      | EAST  | KAYONZA    | RUKARA       | KABUGA    | EMMA@GMAIL.COM | NULL       |
+|    9 | ANNA   | OLGA      | F      | KIGAL | REMERA     | KIMIRONKO    | COSMOS    | ANNA@GMAIL.COM | NULL       |
+|   10 | MUTO   | SHAN      | F      | KIGAL | NYARUGENGE | NYAMIRAMBO   | COSMOS    | SHAN@GMAIL.COM | NULL       |
++------+--------+-----------+--------+-------+------------+--------------+-----------+----------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,FNAME,CELL,GENDER FROM NGOMA;
++------+--------+-----------+--------+
+| ID   | FNAME  | CELL      | GENDER |
++------+--------+-----------+--------+
+|    1 | KEZA   | RWAMABUYE | F      |
+|    2 | MUGABO | NGOMA     | M      |
+|    3 | MWIZA  | NKOTO     | F      |
+|    4 | GISA   | MWIRU     | M      |
+|    5 | GWIZA  | MWIRU     | M      |
+|    6 | TUZA   | AGASIMA   | F      |
+|    7 | JUNO   | GATEBE    | M      |
+|    8 | CYUSA  | KABUGA    | M      |
+|    9 | ANNA   | COSMOS    | F      |
+|   10 | MUTO   | COSMOS    | F      |
++------+--------+-----------+--------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,FNAME,CELL,GENDER FROM NGOMA WHERE ID='1' AND PROV='SOUTH';
++------+-------+-----------+--------+
+| ID   | FNAME | CELL      | GENDER |
++------+-------+-----------+--------+
+|    1 | KEZA  | RWAMABUYE | F      |
++------+-------+-----------+--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE ID='1' OR PROV='SOUTH';
++------+--------+--------+--------+-------+---------+----------+-----------+----------------+------------+
+| ID   | FNAME  | LNAME  | GENDER | PROV  | DISTRIC | SECTOR   | CELL      | EMAIL          | SCHOOLNAME |
++------+--------+--------+--------+-------+---------+----------+-----------+----------------+------------+
+|    1 | KEZA   | PAULA  | F      | SOUTH | NYANZA  | KABEZA   | RWAMABUYE | KEZA@GMAIL.COM | UR HUYE    |
+|    2 | MUGABO | PIEL   | M      | SOUTH | HUYE    | BUTARE   | NGOMA     | MUGA@GMAIL.COM | NULL       |
+|    3 | MWIZA  | KELLEN | F      | SOUTH | KAMONYI | BUGARAMA | NKOTO     | MWIZA@GMAIL.CO | NULL       |
++------+--------+--------+--------+-------+---------+----------+-----------+----------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA WHERE ID='2' AND LNAME='PIEL';
++------+--------+-------+--------+-------+---------+--------+-------+----------------+------------+
+| ID   | FNAME  | LNAME | GENDER | PROV  | DISTRIC | SECTOR | CELL  | EMAIL          | SCHOOLNAME |
++------+--------+-------+--------+-------+---------+--------+-------+----------------+------------+
+|    2 | MUGABO | PIEL  | M      | SOUTH | HUYE    | BUTARE | NGOMA | MUGA@GMAIL.COM | NULL       |
++------+--------+-------+--------+-------+---------+--------+-------+----------------+------------+
+1 row in set (0.00 sec)
+
+mysql>
